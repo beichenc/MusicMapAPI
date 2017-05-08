@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   # GET
   def index
     @users = Users.all
-    json_response(@mapped_songs)
+    json_response(@users)
   end
 
   # POST
