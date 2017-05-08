@@ -30,7 +30,7 @@ module MusicmapApi
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
     config.action_dispatch.default_headers = {
-      'Access-Control-Allow-Origin' => '*',
+      'Access-Control-Allow-Origin' => 'http://localhost:8888/',
       # 'Access-Control-Request-Method' => %w{GET POST}.join(","),
       'Access-Control-Request-Method' => '*',
       'Access-Control-Allow-Methods' => 'POST, PUT, DELETE, GET, OPTIONS',
