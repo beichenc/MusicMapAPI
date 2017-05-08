@@ -31,7 +31,10 @@ module MusicmapApi
     config.api_only = true
     config.action_dispatch.default_headers = {
       'Access-Control-Allow-Origin' => '*',
-      'Access-Control-Request-Method' => %w{GET POST}.join(",")
+      # 'Access-Control-Request-Method' => %w{GET POST}.join(","),
+      'Access-Control-Request-Method' => '*',
+      'Access-Control-Allow-Methods' => 'POST, PUT, DELETE, GET, OPTIONS',
+      'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
     }
   end
 end
