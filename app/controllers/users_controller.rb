@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
   # GET
   def index
-    @users = Users.all
+    @users = User.all
     json_response(@users)
   end
 
   # POST
   def create
-    @user = Users.create!(user_params)
+    @user = User.create!(user_params)
     json_response(@user, :created)
   end
 
