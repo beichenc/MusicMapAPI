@@ -19,7 +19,7 @@ Bundler.require(*Rails.groups)
 module MusicmapApi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.1
+    # config.load_defaults 5.1
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -30,11 +30,11 @@ module MusicmapApi
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
     config.action_dispatch.default_headers = {
-      'Access-Control-Allow-Origin' => 'http://localhost:8888/',
-      # 'Access-Control-Request-Method' => %w{GET POST}.join(","),
-      'Access-Control-Request-Method' => '*',
-      'Access-Control-Allow-Methods' => 'POST, PUT, DELETE, GET, OPTIONS',
-      'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+      'Access-Control-Allow-Origin' => '*',
+      'Access-Control-Request-Method' => %w{GET POST PUT OPTIONS}.join(",")
+      # 'Access-Control-Request-Method' => '*',
+      # 'Access-Control-Allow-Methods' => 'POST, PUT, DELETE, GET, OPTIONS',
+      # 'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
     }
   end
 end
