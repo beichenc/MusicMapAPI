@@ -13,8 +13,8 @@ class CreateMappedSongs < ActiveRecord::Migration[5.1]
       t.integer :month
       t.integer :day
       t.integer :unixtime, :limit => 8
-      t.decimal :lat
-      t.decimal :lng
+      t.float :lat
+      t.float :lng
       t.string :uri
 
       t.timestamps
