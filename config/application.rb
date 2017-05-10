@@ -44,5 +44,7 @@ module MusicmapApi
       end
     end
 
+    ActiveSupport.encode_big_decimal_as_string = true
+
   end
 end
