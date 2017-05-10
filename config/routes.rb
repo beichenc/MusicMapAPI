@@ -4,6 +4,4 @@ Rails.application.routes.draw do
   resources :users
   resources :mapped_songs
 
-  # match '*any' => 'application#options', :via => [:options]
-
 end
