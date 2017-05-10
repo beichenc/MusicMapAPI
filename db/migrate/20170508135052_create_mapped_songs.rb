@@ -12,7 +12,7 @@ class CreateMappedSongs < ActiveRecord::Migration[5.1]
       t.integer :year
       t.integer :month
       t.integer :day
-      t.integer :unixtime
+      t.integer :unixt
       t.decimal :lat
       t.decimal :lng
       t.string :uri
