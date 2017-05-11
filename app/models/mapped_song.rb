@@ -2,5 +2,5 @@ class MappedSong < ApplicationRecord
 
   # belongs_to :user
 
-  validates_presence_of :username, :songname, :artist, :songimg, :year, :month, :day, :lat, :lng, :uri
+  validates_presence_of :username, :songname, :artist, :genres, :songimg, :year, :month, :day, :unixtime, :lat, :lng, :uri
 end

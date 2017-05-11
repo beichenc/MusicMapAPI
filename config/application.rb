@@ -29,12 +29,20 @@ module MusicmapApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
-    config.action_dispatch.default_headers = {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Request-Method': %w{GET POST PUT OPTIONS}.join(",")
-      # 'Access-Control-Request-Method' => '*',
-      # 'Access-Control-Allow-Methods' => 'POST, PUT, DELETE, GET, OPTIONS',
-      # 'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-    }
+    # config.action_dispatch.default_headers = {
+    #   'Access-Control-Allow-Origin' => '*',
+    #   'Access-Control-Request-Method' => %w{GET POST PUT OPTIONS}.join(",")
+    #   # 'Access-Control-Request-Method' => '*',
+    #   # 'Access-Control-Allow-Methods' => 'POST, PUT, DELETE, GET, OPTIONS',
+    #   # 'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+    # }
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :put, :options]
+      end
+    end
+
   end
 end
