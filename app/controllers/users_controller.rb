@@ -18,6 +18,14 @@ class UsersController < ApplicationController
 
   end
 
+  #update users visits
+  def updatevisits
+    @user = User.where("username = ?", params[:username]).first
+    json_response(@user.visits)
+    @user.visits += 1
+    @user.save
+  end
+
   private
   def user_params
     params.permit(:username, :email, :birthday, :producttype, :href, :uri, :imageurl, :followers, :visits)

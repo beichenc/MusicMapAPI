@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :mapped_songs
 
   get '/users/check/:username' => 'users#check'
+  post '/users/:username' => 'users#updatevisits'
 
   # match '*any' => 'application#options', :via => [:options]
 
