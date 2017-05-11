@@ -13,10 +13,8 @@ class UsersController < ApplicationController
 
   #check if the user have been registered
   def check
-    if User.where("username = ?", params[:username]).blank?
-      json_response(false)
-    else
-      json_response(true)
+    @user = User.where("username = ?", params[:username])
+    json_response(@user)
 
   end
 

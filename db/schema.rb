@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 20170508140254) do
     t.integer "year"
     t.integer "month"
     t.integer "day"
-    t.datetime "timestamp"
-    t.decimal "lat"
-    t.decimal "lng"
+    t.bigint "unixtime"
+    t.float "lat"
+    t.float "lng"
     t.string "uri"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
