@@ -5,7 +5,6 @@ class CreateMappedSongs < ActiveRecord::Migration[5.1]
       # Gives "User must exist" error when POSTing data.
       # t.references :user, foreign_key: false
       t.string :username
-      t.string :displayname
       t.string :songname
       t.string :artist
       t.string :genres, array: true, default: []
