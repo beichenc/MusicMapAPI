@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :mapped_songs
 
-  get '/users/check?username=:username', to:'users#check'
+  get '/users/check/:username', to:'users#check'
 
   # match '*any' => 'application#options', :via => [:options]
 
