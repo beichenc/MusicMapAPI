@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :mapped_songs
 
-  get '/users/check/:username' => 'users#check'
+  get '/users/check/:username' => 'users#check', :constraints => { :username => /[^\/]+/ }
   post '/users/:username' => 'users#updatevisits'
 
   # match '*any' => 'application#options', :via => [:options]
