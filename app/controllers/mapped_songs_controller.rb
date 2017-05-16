@@ -49,7 +49,7 @@ class MappedSongsController < ApplicationController
 
   private
   def mapped_song_params
-    params.permit(:username, :songname, :artist, :genres, :songimg, :year, :month, :day, :unixtime, :lat, :lng, :uri)
+    params.permit(:username, :displayname, :songname, :artist, :genres, :songimg, :year, :month, :day, :unixtime, :lat, :lng, :uri)
   end
 
 
