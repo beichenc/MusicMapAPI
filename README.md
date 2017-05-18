@@ -1,24 +1,17 @@
-# README
+# Music Map API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the backend for [Music Map](https://github.com/beichenc/MusicMap) written in Ruby on Rails.
 
-Things you may want to cover:
+## Getting started on your own system
 
-* Ruby version
+Prerequisites:
+- Make sure you have Ruby installed on your computer. It's good to use a Ruby version manager so go install Rvm first and then install Ruby with Rvm. We use version 2.4.1.
+- Make sure you have PostgreSQL installed on your computer. You can install it using Homebrew. If you don't have Homebrew, install that first.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Clone this repository and go into the folder.
+2. Run `createdb dbname` replacing `dbname` with a name for the database.
+3. Run `pg_restore --verbose --clean --no-acl --no-owner -h localhost -U myuser -d mydb latest.dump` replacing `myuser` with your PostgreSQL username and `mydb` with the database name you just created.
+4. Go into the frontend Music Map folder and into `app/components/Home.js`, find all instances where the code uses the URL `https://bestmusicmapapi.herokuapp.com/` and change this to `http://localhost:3000/` in order to send requests to the localhost server instead of our production API website, keeping the rest of the URL route after the domain as it is. For example, `https://bestmusicmapapi.herokuapp.com/users` should be changed to `http://localhost:3000/users`.
+5. Go back to the backend Music Map API folder. Run `bundle install`.
+6. Run `rails s`.
+7. Now the backend is running on `localhost:3000` and running a parallel frontend server, the frontend will be be connected to the local backend database.
