@@ -27,5 +27,6 @@ development:
 ```
 
 Replace `mydb` with your database name.
+
 7. Run `rails s`.
 8. Now the backend is running on `localhost:3000` and running a parallel frontend server, the frontend will be be connected to the local backend database.
