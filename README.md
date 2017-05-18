@@ -13,5 +13,19 @@ Prerequisites:
 3. Run `pg_restore --verbose --clean --no-acl --no-owner -h localhost -U myuser -d mydb latest.dump` replacing `myuser` with your PostgreSQL username and `mydb` with the database name you just created.
 4. Go into the frontend Music Map folder and into `app/components/Home.js`, find all instances where the code uses the URL `https://bestmusicmapapi.herokuapp.com/` and change this to `http://localhost:3000/` in order to send requests to the localhost server instead of our production API website, keeping the rest of the URL route after the domain as it is. For example, `https://bestmusicmapapi.herokuapp.com/users` should be changed to `http://localhost:3000/users`.
 5. Go back to the backend Music Map API folder. Run `bundle install`.
-6. Run `rails s`.
-7. Now the backend is running on `localhost:3000` and running a parallel frontend server, the frontend will be be connected to the local backend database.
+6. Create a new file called `database.yml` in the config folder. Write the following code in:
+
+```
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: mydb
+```
+
+Replace `mydb` with your database name.
+7. Run `rails s`.
+8. Now the backend is running on `localhost:3000` and running a parallel frontend server, the frontend will be be connected to the local backend database.
